@@ -1,26 +1,21 @@
-#[allow(unused_imports)]
+#[allow(unused_variables)]
 
 mod days;
+mod utils;
 
 use chrono::{Datelike, Utc};
 use std::time::Instant;
-use aoc_client::{AocClient, AocResult};
 
-fn main() -> AocResult<()>{
-    let date = Utc::now().date_naive();
-    let client = AocClient::builder()
-        .session_cookie_from_default_locations()?
-        .year(date.year())?
-        .day(date.day())?
-        .build()?;
-    let day_solver = get_day_solver(date.day());
+fn main() {
+    let day: u8 = Utc::now().date_naive().day() as u8;
+    let day_solver = get_day_solver(day);
     let time = Instant::now();
-    let (p1, p2) = day_solver(client.get_input()?);
+    let (p1, p2) = day_solver(utils::get_input(day));
     let elapsed_ms = time.elapsed().as_nanos() as f64 / 1_000_000.0;
     let elapsed_s = elapsed_ms / 1000.0;
-
+    
     if p1 != 0 || p2 != 0 {
-        println!("\n=== Day {:02} ===", date.day());
+        println!("\n=== Day {:02} ===", day);
         println!("  · Part 1: {}", p1);
         println!("  · Part 2: {}", p2);
     }
@@ -30,12 +25,6 @@ fn main() -> AocResult<()>{
         println!("  · Elapsed: {:.4} s", elapsed_s);
     }
 
-    if p1 != 0 {
-        client.submit_answer_and_show_outcome(1, p1)?;
-    }
-    if p2 != 0 {
-        client.submit_answer_and_show_outcome(2, p2)?;
-    }
 }
 
 fn get_day_solver(day: u8) -> fn(String) -> (usize, usize) {
