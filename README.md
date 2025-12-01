@@ -1,2 +1,2 @@
-# Advent of Code 2024
-My solution for the Advent of Code 2024, written in Rust.
+# Advent of Code
+My solutions for the Advent of Code, written in Rust. Each year has its own branch with the respective solutions
