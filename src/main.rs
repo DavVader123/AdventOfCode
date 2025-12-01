@@ -1,10 +1,10 @@
 #[allow(unused_imports)]
 
 mod days;
+mod utils;
 
 use chrono::{Datelike, Utc};
 use std::time::Instant;
-use aoc2024::utils;
 
 fn main() {
     let day: u8 = Utc::now().date_naive().day() as u8;
