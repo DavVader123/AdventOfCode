@@ -1,10 +1,10 @@
 [package]
-name = "aoc2024"
-version = "0.1.0"
-edition = "2021"
+name = "aoc"
+version = "1.0.0"
+edition = "2024"
 
 [dependencies]
-chrono = "0.4.38"
-rayon = "1.10.0"
+chrono = "0.4.42"
+rayon = "1.11.0"
 round = "0.1.2"
-priority-queue = "2.1.1"
+priority-queue = "2.7.0"
