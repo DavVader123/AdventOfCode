@@ -1,5 +1,4 @@
 #[allow(unused_variables)]
-
 mod days;
 mod utils;
 
@@ -13,7 +12,7 @@ fn main() {
     let (p1, p2) = day_solver(utils::get_input(day));
     let elapsed_ms = time.elapsed().as_nanos() as f64 / 1_000_000.0;
     let elapsed_s = elapsed_ms / 1000.0;
-    
+
     if p1 != 0 || p2 != 0 {
         println!("\n=== Day {:02} ===", day);
         println!("  · Part 1: {}", p1);
@@ -24,7 +23,6 @@ fn main() {
     } else {
         println!("  · Elapsed: {:.4} s", elapsed_s);
     }
-
 }
 
 fn get_day_solver(day: u8) -> fn(String) -> (usize, usize) {
@@ -41,6 +39,6 @@ fn get_day_solver(day: u8) -> fn(String) -> (usize, usize) {
         10 => days::day10::solve,
         11 => days::day11::solve,
         12 => days::day12::solve,
-        _ => unimplemented!("Day Not Found")
+        _ => unimplemented!("Day Not Found"),
     }
 }
