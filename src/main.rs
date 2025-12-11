@@ -2,14 +2,14 @@
 mod days;
 mod utils;
 
-use chrono::{Datelike, Utc};
+use chrono::Datelike;
 use std::time::Instant;
 
 fn main() {
-    let day: u8 = Utc::now().date_naive().day() as u8;
+    let day: u8 = 7; //Utc::now().date_naive().day() as u8;
     let day_solver = get_day_solver(day);
     let time = Instant::now();
-    let (p1, p2) = day_solver(utils::get_input(day));
+    let (p1, p2) = day_solver(utils::get_input_trimmed(day));
     let elapsed_ms = time.elapsed().as_nanos() as f64 / 1_000_000.0;
     let elapsed_s = elapsed_ms / 1000.0;
 
