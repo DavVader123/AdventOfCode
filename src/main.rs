@@ -13,11 +13,9 @@ fn main() {
     let elapsed_ms = time.elapsed().as_nanos() as f64 / 1_000_000.0;
     let elapsed_s = elapsed_ms / 1000.0;
 
-    if p1 != 0 || p2 != 0 {
-        println!("\n=== Day {:02} ===", day);
-        println!("  · Part 1: {}", p1);
-        println!("  · Part 2: {}", p2);
-    }
+    println!("\n=== Day {:02} ===", day);
+    println!("  · Part 1: {}", p1);
+    println!("  · Part 2: {}", p2);
     if elapsed_ms < 1000.0 {
         println!("  · Elapsed: {:.4} ms", elapsed_ms);
     } else {
