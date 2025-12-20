@@ -1,4 +1,4 @@
-#[allow(unused_variables)]
+#[allow(unused_imports, unused_variables)]
 mod days;
 mod utils;
 
@@ -6,7 +6,7 @@ use chrono::Datelike;
 use std::time::Instant;
 
 fn main() {
-    let day: u8 = 7; //Utc::now().date_naive().day() as u8;
+    let day: u8 = 8; //Utc::now().date_naive().day() as u8;
     let day_solver = get_day_solver(day);
     let time = Instant::now();
     let (p1, p2) = day_solver(utils::get_input_trimmed(day));
